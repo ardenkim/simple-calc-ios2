@@ -23,6 +23,7 @@ class ViewController: UIViewController {
 
     var calculate = false
     var operand = ""
+    var action = ""
     var num = 0.0
     var nums = [Int]()
     var decimal = false
@@ -44,7 +45,7 @@ class ViewController: UIViewController {
     
     @IBAction func clickOperand(_ sender: UIButton) {
         calculate = true
-        num = Double(Result.text)!
+        num = Double(UInt.init(Result.text!)!)
         switch sender.tag {
         case 0:
             operand = "+"
@@ -62,39 +63,37 @@ class ViewController: UIViewController {
     @IBAction func clickEqual(_ sender: UIButton) {
         switch operand {
         case "+":
-            Result.text = num + Double(Result.text)! + ""
+            Result.text = "\(num + Double(UInt.init(Result.text!)!))"
         case "-":
-            Result.text = num - Double(Result.text)! + ""
+            Result.text = "\(num - Double(UInt.init(Result.text!)!))"
         case "*":
-            Result.text = num * Double(Result.text)! + ""
+            Result.text = "\(num * Double(UInt.init(Result.text!)!))"
         case "/":
-            Result.text = num / Double(Result.text)! + ""
+            Result.text = "\(num / Double(UInt.init(Result.text!)!))"
         default:
-//            Result.text = num + Double(Result.text)! + ""
+            Result.text = "\(num.truncatingRemainder(dividingBy: Double(UInt.init(Result.text!)!)))"
         }
     }
     
     func initialize() {
         calculate = false
         operand = ""
+        action = ""
         num = 0.0
         nums = [Int]()
         decimal = false
         start = true
     }
     
-    @IBAction func clickClear(_ sender: UIButton) {
-        Result.text = "0"
-        calculate = false
-    }
-    
     @IBAction func clickAction(_ sender: UIButton) {
-//        switch sender.tag {
-//        case "count":
-//        case "avg":
-//        case "fact":
-//            
-//        }
+        switch sender.tag {
+        case 0:
+            action = "count"
+        case 1:
+            action = "avg"
+        default:
+            action = "fact"
+        }
     }
     
 }
