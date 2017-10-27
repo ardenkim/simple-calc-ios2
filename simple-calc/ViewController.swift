@@ -24,13 +24,11 @@ class ViewController: UIViewController {
     var calculate = false
     var operand = ""
     var action = ""
-    var num = 0.0
-    var nums = [Int]()
+    var nums = [Double]()
     var decimal = false
     var start = true
     
     @IBAction func clickNumber(_ sender: UIButton) {
-        start = false
         if (sender.tag == 10) {
             if (!decimal) {
                 Result.text = Result.text! + "."
@@ -41,11 +39,12 @@ class ViewController: UIViewController {
         } else {
             Result.text = Result.text! + String(sender.tag)
         }
+        start = false
     }
     
     @IBAction func clickOperand(_ sender: UIButton) {
         calculate = true
-        num = Double(UInt.init(Result.text!)!)
+        nums.append(Double(Result.text!)!)
         switch sender.tag {
         case 0:
             operand = "+"
@@ -61,26 +60,48 @@ class ViewController: UIViewController {
     }
     
     @IBAction func clickEqual(_ sender: UIButton) {
+        nums.append(Double(Result.text!)!)
+        var result : Double
         switch operand {
         case "+":
-            Result.text = "\(num + Double(UInt.init(Result.text!)!))"
+            result = 0.0
+            for num in nums {
+                result += num
+            }
+            Result.text = "\(result)"
         case "-":
-            Result.text = "\(num - Double(UInt.init(Result.text!)!))"
+            result = nums[0] * 2
+            for num in nums {
+                result -= num
+            }
+            Result.text = "\(result)"
         case "*":
-            Result.text = "\(num * Double(UInt.init(Result.text!)!))"
+            result = 1.0
+            for num in nums {
+                result *= num
+            }
+            Result.text = "\(result)"
         case "/":
-            Result.text = "\(num / Double(UInt.init(Result.text!)!))"
+            result = nums[0] * nums[0]
+            for num in nums {
+                result /= num
+            }
+            Result.text = "\(result)"
         default:
-            Result.text = "\(num.truncatingRemainder(dividingBy: Double(UInt.init(Result.text!)!)))"
+            result = nums[0]
+            for i in 1 ..< nums.count {
+                result = result.truncatingRemainder(dividingBy: nums[i])
+            }
         }
+        Result.text = "\(result)"
+        initialize()
     }
     
     func initialize() {
         calculate = false
         operand = ""
         action = ""
-        num = 0.0
-        nums = [Int]()
+        nums = [Double]()
         decimal = false
         start = true
     }

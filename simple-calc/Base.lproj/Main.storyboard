@@ -139,12 +139,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="*"/>
+                                <connections>
+                                    <action selector="clickOperand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DfX-7M-WkY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5E-bX-N6d">
                                 <rect key="frame" x="254" y="413" width="55" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="/"/>
+                                <connections>
+                                    <action selector="clickOperand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ewB-RF-zH2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cA8-oG-Qub">
                                 <rect key="frame" x="65" y="478" width="55" height="57"/>
@@ -178,6 +184,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="%"/>
+                                <connections>
+                                    <action selector="clickOperand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mRI-FV-MDB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iR-Lc-ugV">
                                 <rect key="frame" x="65" y="218" width="55" height="57"/>
