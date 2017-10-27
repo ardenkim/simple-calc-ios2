@@ -23,7 +23,6 @@ class ViewController: UIViewController {
 
     var calculate = false
     var operand = ""
-    var action = ""
     var nums = [Double]()
     var decimal = false
     var start = true
@@ -87,10 +86,23 @@ class ViewController: UIViewController {
                 result /= num
             }
             Result.text = "\(result)"
-        default:
+        case "%":
             result = nums[0]
             for i in 1 ..< nums.count {
                 result = result.truncatingRemainder(dividingBy: nums[i])
+            }
+        case "count":
+            result = Double(nums.count)
+        case "avg":
+            result = 0.0
+            for num in nums {
+                result += num
+            }
+            result /= Double(nums.count)
+        default:
+            result = nums[0]
+            for i in 1 ..< Int(nums[0])  {
+                result *= Double(i)
             }
         }
         Result.text = "\(result)"
@@ -100,20 +112,21 @@ class ViewController: UIViewController {
     func initialize() {
         calculate = false
         operand = ""
-        action = ""
         nums = [Double]()
         decimal = false
         start = true
     }
     
     @IBAction func clickAction(_ sender: UIButton) {
+        calculate = true
+        nums.append(Double(Result.text!)!)
         switch sender.tag {
         case 0:
-            action = "count"
+            operand = "count"
         case 1:
-            action = "avg"
+            operand = "avg"
         default:
-            action = "fact"
+            operand = "fact"
         }
     }
     
