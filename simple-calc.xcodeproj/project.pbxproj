@@ -12,6 +12,7 @@
 		4919B5E11FA137C500E76C22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4919B5DF1FA137C500E76C22 /* Main.storyboard */; };
 		4919B5E31FA137C500E76C22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4919B5E21FA137C500E76C22 /* Assets.xcassets */; };
 		4919B5E61FA137C500E76C22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4919B5E41FA137C500E76C22 /* LaunchScreen.storyboard */; };
+		49A4C6A31FA9186F00BBCEC9 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4C6A21FA9186F00BBCEC9 /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		4919B5E21FA137C500E76C22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4919B5E51FA137C500E76C22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4919B5E71FA137C500E76C22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49A4C6A21FA9186F00BBCEC9 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				4919B5DB1FA137C500E76C22 /* AppDelegate.swift */,
 				4919B5DD1FA137C500E76C22 /* ViewController.swift */,
+				49A4C6A21FA9186F00BBCEC9 /* HistoryViewController.swift */,
 				4919B5DF1FA137C500E76C22 /* Main.storyboard */,
 				4919B5E21FA137C500E76C22 /* Assets.xcassets */,
 				4919B5E41FA137C500E76C22 /* LaunchScreen.storyboard */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49A4C6A31FA9186F00BBCEC9 /* HistoryViewController.swift in Sources */,
 				4919B5DE1FA137C500E76C22 /* ViewController.swift in Sources */,
 				4919B5DC1FA137C500E76C22 /* AppDelegate.swift in Sources */,
 			);
